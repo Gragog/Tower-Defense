@@ -33,4 +33,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-Git.exe
+# prevent impossible merges with binary files
+*.exe
