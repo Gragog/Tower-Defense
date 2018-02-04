@@ -35,3 +35,6 @@ sysinfo.txt
 
 # prevent impossible merges with binary files
 *.exe
+
+# Stuff
+*.db
