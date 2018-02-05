@@ -30,7 +30,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# prevent impossible merges with binary files
+# ignore BetterGit
+/git/
 *.exe
 
 # Stuff
