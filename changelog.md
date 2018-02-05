@@ -3,6 +3,8 @@
 ## Unreleased
 ### Added
 - [td-1]: added changelog.md
+- [td-1]: emenies can get next target
+- [td-1]: simple enemySpawner
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1

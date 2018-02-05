@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float speed = 20f;
     [Range(0f, 5f)]
-    public float offsetRange = 2f;
+    public float offsetRange = .4f;
 
     Transform baseTarget;
     int waypointIndex = 0;
@@ -30,6 +30,19 @@ public class EnemyMovement : MonoBehaviour
 
         Vector3 dir = walkTo - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+        if (Vector3.SqrMagnitude(walkTo - transform.position) < .3f)
+        {
+            waypointIndex++;
+            hasTarget = false;
+            if (waypointIndex >= Waypoints.waypoints.Length)
+            {
+                // deal damage
+                DestroyObject(transform.gameObject);
+                return;
+            }
+            baseTarget = Waypoints.waypoints[waypointIndex];
+        }
     }
 
     void GetWalkTo()
