@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tower-Defense", "Tower-Defense.csproj", "{9FF3E361-9480-1278-AD13-F6167D595D53}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tower-Defense.Editor", "Tower-Defense.Editor.csproj", "{C665FBB8-9E5E-EEB3-22E2-B5A9E8F66C16}"
