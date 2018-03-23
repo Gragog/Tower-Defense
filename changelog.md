@@ -6,8 +6,12 @@
 - [td-1]: emenies can get next target
 - [td-1]: simple enemySpawner
 - [td-2]: enemies move next to a target, not perfectly to the point given
+- [td-3]: created Wave ScriptaleObject to store a wave
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1
+- [td-3]: revamped the WaveSpawner to spawn individual waves
 
 [td-1]: https://github.com/Gragog/Tower-Defense/tree/td-1
+[td-2]: https://github.com/Gragog/Tower-Defense/tree/td-2
+[td-3]: https://github.com/Gragog/Tower-Defense/tree/td-3

@@ -786,23 +786,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4252404849320088, guid: de1499b08fb58a14ea8fd92569b65d36,
     type: 2}
   m_PrefabInternal: {fileID: 123020903}
---- !u!1 &136858698 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1415189738086656, guid: 37116b7813c7ec543ae3c17a40348a03,
-    type: 2}
-  m_PrefabInternal: {fileID: 1251398432}
---- !u!114 &136858699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 136858698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e02d27ee03fde45a34edda60b7dd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePerHit: 5
 --- !u!1001 &145593691
 Prefab:
   m_ObjectHideFlags: 0
@@ -2506,7 +2489,7 @@ GameObject:
   - component: {fileID: 472985027}
   - component: {fileID: 472985026}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: '#EnemySpawner'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2523,10 +2506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a06410241e44254ba4dfb5072142417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1072261961178050, guid: dbebf1eec11ce684fa46e8d90cd78420, type: 2}
   amount: 15
   startDelay: 1
   delay: 0.4
+  waves:
+  - {fileID: 11400000, guid: a37b9fac03404e04ba6d2b18399d7bd0, type: 2}
+  - {fileID: 11400000, guid: 95b05de21ad626c4d8f5380845742c8e, type: 2}
+  - {fileID: 11400000, guid: a37b9fac03404e04ba6d2b18399d7bd0, type: 2}
 --- !u!4 &472985027
 Transform:
   m_ObjectHideFlags: 0
@@ -2538,7 +2524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &480828317
 Prefab:
@@ -8678,7 +8664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!1001 &1539289893
 Prefab:

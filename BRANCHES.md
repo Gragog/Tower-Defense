@@ -9,4 +9,5 @@
 - Enemies are no longer following the expact path, but vary in destination a bit
 - Included 'Strategy' pattern for turrets
 
-## [td-3](https://github.com/Gragog/Tower-Defense/tree/td-3): 
+## [td-3](https://github.com/Gragog/Tower-Defense/tree/td-3): Complex wave system
+- Handling waves with ScriptableObjects

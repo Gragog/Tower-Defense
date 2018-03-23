@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5baa71d138660040a1c86ed4846f8bf, type: 3}
+  m_Name: anotherTetsWave
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1885032696291910, guid: 5c37326045da4fa49807d786baa6ce60, type: 2}
+  enemyCount: 5
+  postDelay: 2
