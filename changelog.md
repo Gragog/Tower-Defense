@@ -5,6 +5,7 @@
 - [td-1]: added changelog.md
 - [td-1]: emenies can get next target
 - [td-1]: simple enemySpawner
+- [td-2]: enemies move next to a target, not perfectly to the point given
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1
