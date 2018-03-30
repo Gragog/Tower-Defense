@@ -15,5 +15,9 @@ public class Wave : ScriptableObject {
     public float delay = 0.5f;
 
     [Tooltip("Delay after wave has spawned")]
-    public float postDelay;
+    public float postDelay = 2f;
+
+    [Header("Use this to adjust time for special waves (like bosses)")]
+    [Tooltip("Delay before wave is spawned")]
+    public float preDelay = 0f;
 }

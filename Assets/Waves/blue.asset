@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5baa71d138660040a1c86ed4846f8bf, type: 3}
-  m_Name: anotherTetsWave
+  m_Name: blue
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1072261961178050, guid: 95e7a7bdcf3d53a4791235ba8ad689bc, type: 2}
-  enemyCount: 50
-  delay: 0.1
+  enemy: {fileID: 1072261961178050, guid: dbebf1eec11ce684fa46e8d90cd78420, type: 2}
+  enemyCount: 5
+  delay: 0.5
   postDelay: 2
+  preDelay: 0

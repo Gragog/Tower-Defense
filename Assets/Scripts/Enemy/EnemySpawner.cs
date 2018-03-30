@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,52 +12,62 @@ public class EnemySpawner : MonoBehaviour
     public List<Wave> waves;
 
     int waveCount = 0;
-    private bool waveIsSpawning = false;
+    bool waveIsSpawning = false;
+
+    [Header("Text")]
+    [Space(5)]
+    public Text currentWaveText;
+    public Text spawnsInWaveText;
+    public Text timeToNextWaveText;
+    float waveCountdown;
 
     void Start()
     {
-        SpawnWaves();
+        StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnEnemy(Wave wave)
+    IEnumerator SpawnWaves()
     {
-        waveIsSpawning = true;
+        waveCountdown = startDelay;
+        yield return new WaitForSeconds(startDelay);
 
-        if (waveCount == 0) yield return new WaitForSeconds(startDelay);
-
-        for (int i = 0; i < wave.enemyCount; i++)
+        foreach (Wave wave in waves)
         {
-            Instantiate(wave.enemy, transform.position, Quaternion.identity, transform);
+            waveCountdown = wave.preDelay;
+            yield return new WaitForSeconds(wave.preDelay);
 
-            yield return new WaitForSeconds(wave.delay);
+            waveCount++;
+            currentWaveText.text = "Wave " + waveCount.ToString() + " / " + waves.Count.ToString();
+
+            waveIsSpawning = true;
+            for (int i = 0; i < wave.enemyCount; i++)
+            {
+                spawnsInWaveText.text = "Enemy " + (i + 1).ToString() + " / " + wave.enemyCount.ToString();
+
+                Instantiate(wave.enemy, transform.position, Quaternion.identity, transform);
+
+                yield return new WaitForSeconds(wave.delay);
+            }
+            waveIsSpawning = false;
+
+            waveCountdown = wave.postDelay;
+            yield return new WaitForSeconds(wave.postDelay);
+        }
+    }
+
+    void Update()
+    {
+        timeToNextWaveText.text = "Wave is spawning";
+
+        if (!waveIsSpawning && waveCount < waves.Count)
+        {
+            timeToNextWaveText.text = "Waiting for: " + waveCountdown.ToString("0.0");
+            waveCountdown -= Time.deltaTime;
         }
 
-        yield return new WaitForSeconds(wave.postDelay);
-        waveCount++;
-        waveIsSpawning = false;
-
-        if (waveCount < waves.Count) StartCoroutine(LetMeSpawnNextWave(wave.postDelay));
-
-        yield break;
-    }
-
-    IEnumerator LetMeSpawnNextWave(float waitFor)
-    {
-        yield return new WaitForSeconds(waitFor);
-
-        StartCoroutine(SpawnEnemy(waves[waveCount]));
-    }
-
-    void SpawnWaves()
-    {
-        StartCoroutine(SpawnEnemy(waves[waveCount]));
-    }
-
-    /* void Update()
-    {
-        if (! waveIsSpawning)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            SpawnNextWave();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-    } */
+    }
 }
