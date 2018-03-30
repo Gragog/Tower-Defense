@@ -15,3 +15,4 @@
 - Handling waves with ScriptableObjects
 ---
 ## [td-4](https://github.com/Gragog/Tower-Defense/tree/td-3): Some UI
+- UI shows some statistics at top of screen
