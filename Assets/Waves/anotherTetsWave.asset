@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5baa71d138660040a1c86ed4846f8bf, type: 3}
   m_Name: anotherTetsWave
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1885032696291910, guid: 5c37326045da4fa49807d786baa6ce60, type: 2}
-  enemyCount: 5
+  enemy: {fileID: 1072261961178050, guid: 95e7a7bdcf3d53a4791235ba8ad689bc, type: 2}
+  enemyCount: 50
+  delay: 0.1
   postDelay: 2

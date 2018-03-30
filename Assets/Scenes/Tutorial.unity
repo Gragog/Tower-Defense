@@ -2506,9 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a06410241e44254ba4dfb5072142417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 15
   startDelay: 1
-  delay: 0.4
   waves:
   - {fileID: 11400000, guid: a37b9fac03404e04ba6d2b18399d7bd0, type: 2}
   - {fileID: 11400000, guid: 95b05de21ad626c4d8f5380845742c8e, type: 2}
