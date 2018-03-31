@@ -10848,6 +10848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766319384}
   - component: {fileID: 1766319383}
+  - component: {fileID: 1766319385}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -10888,6 +10889,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1766319385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1766319382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e02d27ee03fde45a34edda60b7dd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15.08
+  damagePerHit: 5
 --- !u!1001 &1773230630
 Prefab:
   m_ObjectHideFlags: 0
@@ -11566,7 +11580,6 @@ GameObject:
   - component: {fileID: 1892022496}
   - component: {fileID: 1892022498}
   - component: {fileID: 1892022497}
-  - component: {fileID: 1892022499}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -11632,19 +11645,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892022495}
   m_Mesh: {fileID: 4300002, guid: 5503474fa951bde4bab28b0becb88546, type: 3}
---- !u!114 &1892022499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1892022495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e02d27ee03fde45a34edda60b7dd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 15.81
-  damagePerHit: 5
 --- !u!1001 &1893257919
 Prefab:
   m_ObjectHideFlags: 0

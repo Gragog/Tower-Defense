@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BaseTurret: MonoBehaviour {
 
-    public float range = 10f;
+    public float range = 15f;
 
     IAttackBehavior attackBehavior;
 
-    Transform target;
+    public Transform target;
 
     protected void SetAttackBehavior(IAttackBehavior behavior)
     {
@@ -24,5 +24,11 @@ public class BaseTurret: MonoBehaviour {
     {
         UnityEditor.Handles.color = Color.red;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, range);
+
+        if (target != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(transform.position, target.position);
+        }
     }
 }
