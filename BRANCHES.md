@@ -14,5 +14,7 @@
 ## [td-3](https://github.com/Gragog/Tower-Defense/tree/td-3): Complex wave system
 - Handling waves with ScriptableObjects
 ---
-## [td-4](https://github.com/Gragog/Tower-Defense/tree/td-3): Some UI
+## [td-4](https://github.com/Gragog/Tower-Defense/tree/td-4): Some UI
 - UI shows some statistics at top of screen
+---
+## [td-5](https://github.com/Gragog/Tower-Defense/tree/td-5): Turret aiming

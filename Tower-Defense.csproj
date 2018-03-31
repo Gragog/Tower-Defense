@@ -295,6 +295,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
+    <Compile Include="Assets\Scripts\Helper\PrimitiveHelper.cs" />
     <Compile Include="Assets\Scripts\Turrets\BaseTurret.cs" />
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\AttackBullet.cs" />
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\AttackLaser.cs" />
@@ -302,6 +303,9 @@
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\IAttackBehavior.cs" />
     <Compile Include="Assets\Scripts\Turrets\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\Waypoints.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Downloaded\TowerDefense-Pack\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
