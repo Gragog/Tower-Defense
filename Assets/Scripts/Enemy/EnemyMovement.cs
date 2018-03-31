@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
     public float speed = 20f;
     [Range(0f, 5f)]
     public float offsetRange = .4f;
+
+    Transform[] waypoints;
 
     Transform baseTarget;
     int waypointIndex = 0;
@@ -17,13 +18,14 @@ public class EnemyMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        baseTarget = Waypoints.waypoints[0];
+        waypoints = Waypoints.waypoints;
+        baseTarget = waypoints[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hasTarget && baseTarget != null)
+        if (!hasTarget)
         {
             GetWalkTo();
         }
@@ -33,15 +35,23 @@ public class EnemyMovement : MonoBehaviour
 
         if (Vector3.SqrMagnitude(walkTo - transform.position) < .3f)
         {
-            waypointIndex++;
-            hasTarget = false;
-            if (waypointIndex >= Waypoints.waypoints.Length)
+            if (waypointIndex >= waypoints.Length)
             {
                 // deal damage
                 DestroyObject(transform.gameObject);
                 return;
             }
-            baseTarget = Waypoints.waypoints[waypointIndex];
+            GetNextTarget();
+        }
+    }
+
+    void GetNextTarget()
+    {
+        hasTarget = false;
+        waypointIndex++;
+        if (waypoints[waypointIndex].childCount == 0)
+        {
+            baseTarget = waypoints[waypointIndex];
         }
     }
 

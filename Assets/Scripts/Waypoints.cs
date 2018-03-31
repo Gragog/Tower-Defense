@@ -2,10 +2,8 @@
 
 public class Waypoints : MonoBehaviour
 {
-
     public static Transform[] waypoints;
 
-    // Use this for initialization
     void Awake()
     {
         waypoints = new Transform[transform.childCount];
@@ -15,5 +13,4 @@ public class Waypoints : MonoBehaviour
             waypoints[i] = transform.GetChild(i);
         }
     }
-
 }
