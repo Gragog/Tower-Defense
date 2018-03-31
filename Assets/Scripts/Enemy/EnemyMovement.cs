@@ -49,9 +49,19 @@ public class EnemyMovement : MonoBehaviour
     {
         hasTarget = false;
         waypointIndex++;
-        if (waypoints[waypointIndex].childCount == 0)
+        int childCount = waypoints[waypointIndex].childCount;
+        if (childCount == 0)
         {
             baseTarget = waypoints[waypointIndex];
+            return;
+        }
+
+        int path = Random.Range(0, childCount);
+
+        Transform[] waypointsInPath = new Transform[childCount];
+        for (int i = 0; i < childCount; i++)
+        {
+            waypointsInPath[i] = waypoints[waypointIndex].GetChild(i);
         }
     }
 
