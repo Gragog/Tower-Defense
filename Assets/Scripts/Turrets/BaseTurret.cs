@@ -49,7 +49,10 @@ public class BaseTurret: MonoBehaviour {
         if (nearestEnemy != null && shortestDistance <= (range * range))
         {
             target = nearestEnemy;
+            return;
         }
+
+        target = null;
     }
 
     void Update()
