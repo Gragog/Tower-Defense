@@ -11,12 +11,17 @@
 - [td-4]: UI showing current wave
 - [td-4]: UI showing enemy in wave
 - [td-4]: UI showing time to next wave
+- [td-5]: Turret Updates Target an looks to it
+- [td-5]: Turret shoots at target when in range
+- [td-5]: added EnemyFinder that has all enemies with given tag stored
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1
 - [td-3]: revamped the WaveSpawner to spawn individual waves
+- [td-5]: AttackInterface returns true when enemy is ded
 
 [td-1]: https://github.com/Gragog/Tower-Defense/tree/td-1
 [td-2]: https://github.com/Gragog/Tower-Defense/tree/td-2
 [td-3]: https://github.com/Gragog/Tower-Defense/tree/td-3
-[td-3]: https://github.com/Gragog/Tower-Defense/tree/td-4
+[td-4]: https://github.com/Gragog/Tower-Defense/tree/td-4
+[td-5]: https://github.com/Gragog/Tower-Defense/tree/td-5

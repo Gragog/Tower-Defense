@@ -75,7 +75,7 @@ public class BaseTurret: MonoBehaviour {
 
         if (target != null)
         {
-            Gizmos.color = Color.cyan;
+            Gizmos.color = attackCountdown <= .1f ? Color.red : Color.cyan;
             Gizmos.DrawLine(transform.position, target.transform.position);
         }
     }

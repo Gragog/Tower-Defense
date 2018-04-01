@@ -18,3 +18,5 @@
 - UI shows some statistics at top of screen
 ---
 ## [td-5](https://github.com/Gragog/Tower-Defense/tree/td-5): Turret aiming
+- Turret looking at enemy
+- Simple damage dealing
