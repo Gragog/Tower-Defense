@@ -61,7 +61,10 @@ public class BaseTurret: MonoBehaviour {
 
         if (target != null)
         {
-            transform.LookAt(target.transform);
+            // Rotate the Base of the turret
+            Transform partToRotate = transform.GetChild(0);
+            Quaternion lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            partToRotate.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
 
             if (attackCountdown <= 0f)
             {

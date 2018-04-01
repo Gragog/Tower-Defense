@@ -52,4 +52,10 @@ public class EnemyMovement : MonoBehaviour
         walkTo.z += Random.Range(-offsetRange, offsetRange + 1);
         hasTarget = true;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, walkTo);
+    }
 }
