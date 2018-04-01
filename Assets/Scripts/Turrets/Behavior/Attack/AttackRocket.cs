@@ -2,8 +2,10 @@
 
 public class AttackRocket : MonoBehaviour, IAttackBehavior
 {
-    public void Attack(Transform targetPosition, float damageAmount)
+    public bool Attack(GameObject target, float damageAmount)
     {
-        Debug.Log("Firering Rocket");
+        Debug.Log("Shooting at " + target.name + " dealing " + damageAmount + " damage!");
+
+        return false;
     }
 }

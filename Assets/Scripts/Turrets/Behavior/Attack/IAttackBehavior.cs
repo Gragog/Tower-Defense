@@ -2,5 +2,5 @@
 
 public interface IAttackBehavior {
 
-    void Attack(Transform targetPosition, float damageAmount);
+    bool Attack(GameObject targetPosition, float damageAmount);
 }

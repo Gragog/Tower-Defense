@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AttackLaser : MonoBehaviour, IAttackBehavior
 {
-    public void Attack(Transform targetPosition, float damageAmount)
+    public bool Attack(GameObject target, float damageAmount)
     {
-        Debug.Log("Disintegrating with a lazor!");
+        Debug.Log("Disintegrating " + target.name + ", dealing " + damageAmount + " damage!");
+
+        return false;
     }
 }

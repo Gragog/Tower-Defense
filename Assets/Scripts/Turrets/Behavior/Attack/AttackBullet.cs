@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBullet : MonoBehaviour, IAttackBehavior {
+public class AttackBullet : IAttackBehavior {
 
-    public void Attack(Transform targetPosition, float damageAmount)
+    public bool Attack(GameObject target, float damageAmount)
     {
-        Debug.Log("Shooting Bullet dealing " + damageAmount + " damage!");
+        Debug.Log("Shooting Bullet at " + target.name + " dealing " + damageAmount + " damage!");
+        return target.GetComponent<EnemyHealthController>().DealDamage(damageAmount);
     }
 }

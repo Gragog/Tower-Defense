@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class TurretBullet : BaseTurret {
 
-    public float damagePerHit = 5f;
-
 	// Use this for initialization
 	void Start () {
+        Init();
         SetAttackBehavior(new AttackBullet());
-    }
-
-    private void Update()
-    {
-        Attack(transform, damagePerHit);
     }
 }

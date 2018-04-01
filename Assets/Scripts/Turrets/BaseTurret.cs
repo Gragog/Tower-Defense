@@ -5,19 +5,67 @@ using UnityEngine;
 public class BaseTurret: MonoBehaviour {
 
     public float range = 15f;
+    public float damagePerHit = 5f;
+    public float attackRate = 1f;
+
+    float attackCountdown;
 
     IAttackBehavior attackBehavior;
 
-    public Transform target;
+    public GameObject target;
+
+    protected void Init()
+    {
+        attackCountdown = attackRate;
+        InvokeRepeating("UpdateTarget", 0f, .5f);
+    }
 
     protected void SetAttackBehavior(IAttackBehavior behavior)
     {
         attackBehavior = behavior;
     }
 
-    protected void Attack(Transform target, float damageAmount)
+    protected void Attack()
     {
-        attackBehavior.Attack(target, damageAmount);
+        if (attackBehavior.Attack(target, damagePerHit)) target = null;
+    }
+
+    void UpdateTarget()
+    {
+        float shortestDistance = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+
+        foreach (GameObject enemy in EnemyFinder.enemies)
+        {
+            float distanceToEnemy = Vector3.SqrMagnitude(enemy.transform.position - transform.position);
+
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null && shortestDistance <= (range * range))
+        {
+            target = nearestEnemy;
+        }
+    }
+
+    void Update()
+    {
+        attackCountdown -= Time.deltaTime;
+
+        if (target != null)
+        {
+            transform.LookAt(target.transform);
+
+            if (attackCountdown <= 0f)
+            {
+                Attack();
+                attackCountdown = attackRate;
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -28,7 +76,7 @@ public class BaseTurret: MonoBehaviour {
         if (target != null)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawLine(transform.position, target.position);
+            Gizmos.DrawLine(transform.position, target.transform.position);
         }
     }
 }

@@ -292,6 +292,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealthController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
@@ -301,6 +302,7 @@
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\AttackLaser.cs" />
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\AttackRocket.cs" />
     <Compile Include="Assets\Scripts\Turrets\Behavior\Attack\IAttackBehavior.cs" />
+    <Compile Include="Assets\Scripts\Turrets\EnemyFinder.cs" />
     <Compile Include="Assets\Scripts\Turrets\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\Waypoints.cs" />
   </ItemGroup>
