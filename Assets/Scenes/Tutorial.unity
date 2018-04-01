@@ -2723,6 +2723,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 95b05de21ad626c4d8f5380845742c8e, type: 2}
   - {fileID: 11400000, guid: a37b9fac03404e04ba6d2b18399d7bd0, type: 2}
   - {fileID: 11400000, guid: 77cc1e27fb8825b4c8c59b2563b9d4f4, type: 2}
+  - {fileID: 11400000, guid: 031e357cb4224e2439726a24f5e2611a, type: 2}
   - {fileID: 11400000, guid: 3931a3545da8a764ab92eb93f3ba20a8, type: 2}
   currentWaveText: {fileID: 262472479}
   spawnsInWaveText: {fileID: 833849254}
