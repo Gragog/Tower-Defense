@@ -24,10 +24,9 @@ public class Bullet : MonoBehaviour {
         }
 
         Vector3 dir = target.transform.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        transform.LookAt(target.transform);
+        float distanceThisFrame = Time.deltaTime * speed;
 
-        if (Vector3.SqrMagnitude(dir) < .2f)
+        if (dir.sqrMagnitude <= (distanceThisFrame * distanceThisFrame) + .5f)
         {
             if (target.GetComponent<EnemyHealthController>().DealDamage(turret.damagePerHit))
                 turret.RemoveTarget();
@@ -35,6 +34,9 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.LookAt(target.transform);
     }
 
     private void OnDrawGizmosSelected()
