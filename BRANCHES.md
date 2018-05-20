@@ -20,3 +20,6 @@
 ## [td-5](https://github.com/Gragog/Tower-Defense/tree/td-5): Turret aiming
 - Turret looking at enemy
 - Simple damage dealing
+---
+## [td-6](https://github.com/Gragog/Tower-Defense/tree/td-6): Building Turrets
+- Building a turret when clicking on a node
