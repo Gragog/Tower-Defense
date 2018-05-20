@@ -281,6 +281,7 @@ MonoBehaviour:
   damagePerHit: 2
   attackRate: 1
   rotationSpeed: 7
+  refreshTargetIntervall: 0.5
   target: {fileID: 0}
   bulletPrefab: {fileID: 1720626869272912, guid: b587179623b0e6e429dea530effb4275,
     type: 2}

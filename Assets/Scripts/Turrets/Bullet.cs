@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public float speed = 25f;
+    public ParticleSystem impactEffect;
 
     GameObject target;
     TurretBullet turret;
@@ -19,7 +20,7 @@ public class Bullet : MonoBehaviour {
 	void Update () {
         if (! target)
         {
-            Destroy(gameObject);
+            DestroyBullet();
             return;
         }
 
@@ -31,12 +32,19 @@ public class Bullet : MonoBehaviour {
             if (target.GetComponent<EnemyHealthController>().DealDamage(turret.damagePerHit))
                 turret.RemoveTarget();
 
-            Destroy(gameObject);
+            DestroyBullet();
             return;
         }
 
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
         transform.LookAt(target.transform);
+    }
+
+    private void DestroyBullet()
+    {
+        if (impactEffect) Instantiate(impactEffect, transform.position, transform.rotation, transform.parent);
+
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

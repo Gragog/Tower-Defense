@@ -16,6 +16,7 @@
 - [td-5]: added EnemyFinder that has all enemies with given tag stored
 - [td-5]: added Bullet prefab and Script
 - [td-5]: added #SceneManager (currently only for timeScale)
+- [td-5]: added a particle effect when a bullet get destroyed
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1
