@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
             if (waypointIndex >= Waypoints.waypoints.Length)
             {
                 // deal damage
-                DestroyObject(transform.gameObject);
+                Destroy(transform.gameObject);
                 return;
             }
             baseTarget = Waypoints.waypoints[waypointIndex];

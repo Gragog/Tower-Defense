@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BaseTurret: MonoBehaviour {
 
+    [Header("Turret Attributes")]
     public float range = 15f;
     public float damagePerHit = 5f;
     public float attackRate = 1f;
+    public float rotationSpeed = 10f;
 
     float attackCountdown;
+    Transform partToRotate;
 
     IAttackBehavior attackBehavior;
 
-    public GameObject target;
+    GameObject target;
 
     protected void Init()
     {
@@ -61,10 +64,10 @@ public class BaseTurret: MonoBehaviour {
 
         if (target != null)
         {
-            // Rotate the Base of the turret
-            Transform partToRotate = transform.GetChild(0);
+            // Rotate the Head of the turret
+            partToRotate = transform.GetChild(0);
             Quaternion lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            partToRotate.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
+            partToRotate.rotation = Quaternion.Euler(0f, Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles.y, 0f);
 
             if (attackCountdown <= 0f)
             {

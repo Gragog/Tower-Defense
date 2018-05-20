@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TurretBullet : BaseTurret {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject bulletPrefab;
+
+    // Use this for initialization
+    void Start () {
         Init();
-        SetAttackBehavior(new AttackBullet());
+        SetAttackBehavior(new AttackBullet(bulletPrefab, transform.GetChild(0).GetChild(0)));
     }
 }

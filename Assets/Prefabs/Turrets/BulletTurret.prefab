@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4238852324686670}
   m_Layer: 0
-  m_Name: PartToRotate
+  m_Name: '[0] PartToRotate'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: e9b742a3dcad17b4c86f03f75c54c994, type: 2}
   - {fileID: 2100000, guid: 1ad0c1b385403b64b9b642ebad1d97e5, type: 2}
@@ -180,6 +181,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1ad0c1b385403b64b9b642ebad1d97e5, type: 2}
   - {fileID: 2100000, guid: e9b742a3dcad17b4c86f03f75c54c994, type: 2}
@@ -234,6 +236,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114725577908127994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,4 +251,5 @@ MonoBehaviour:
   range: 12
   damagePerHit: 2
   attackRate: 1
+  rotationSpeed: 7
   target: {fileID: 0}
