@@ -31,14 +31,14 @@ public class EnemyMovement : MonoBehaviour
         Vector3 dir = walkTo - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.SqrMagnitude(walkTo - transform.position) < .3f)
+        if (Vector3.SqrMagnitude(dir) < .3f)
         {
             waypointIndex++;
             hasTarget = false;
             if (waypointIndex >= Waypoints.waypoints.Length)
             {
                 // deal damage
-                Destroy(transform.gameObject);
+                Destroy(gameObject);
                 return;
             }
             baseTarget = Waypoints.waypoints[waypointIndex];

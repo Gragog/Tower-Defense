@@ -2,36 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseTurret: MonoBehaviour {
+public abstract class BaseTurret: MonoBehaviour {
 
     [Header("Turret Attributes")]
     public float range = 15f;
     public float damagePerHit = 5f;
     public float attackRate = 1f;
     public float rotationSpeed = 10f;
+    [Range(.01f, 10f)][Tooltip("Intervall for refreshing the target.\nHigh attack rate mens a lower refresh Intervall.\n(default: 0.5)")]
+    public float refreshTargetIntervall = .5f;
 
     float attackCountdown;
-    Transform partToRotate;
+    protected Transform partToRotate;
+    public GameObject target;
 
-    IAttackBehavior attackBehavior;
-
-    GameObject target;
-
-    protected void Init()
+    protected void Start()
     {
-        attackCountdown = attackRate;
-        InvokeRepeating("UpdateTarget", 0f, .5f);
+        attackCountdown = 1f / attackRate;
+        InvokeRepeating("UpdateTarget", 0f, refreshTargetIntervall);
     }
 
-    protected void SetAttackBehavior(IAttackBehavior behavior)
-    {
-        attackBehavior = behavior;
-    }
-
-    protected void Attack()
-    {
-        if (attackBehavior.Attack(target, damagePerHit)) target = null;
-    }
+    protected abstract void Attack();
 
     void UpdateTarget()
     {
@@ -40,6 +31,8 @@ public class BaseTurret: MonoBehaviour {
 
         foreach (GameObject enemy in EnemyFinder.enemies)
         {
+            if (!enemy) continue;
+
             float distanceToEnemy = Vector3.SqrMagnitude(enemy.transform.position - transform.position);
 
             if (distanceToEnemy < shortestDistance)
@@ -72,7 +65,7 @@ public class BaseTurret: MonoBehaviour {
             if (attackCountdown <= 0f)
             {
                 Attack();
-                attackCountdown = attackRate;
+                attackCountdown = 1f / attackRate;
             }
         }
     }

@@ -14,11 +14,16 @@
 - [td-5]: Turret Updates Target an looks to it
 - [td-5]: Turret shoots at target when in range
 - [td-5]: added EnemyFinder that has all enemies with given tag stored
+- [td-5]: added Bullet prefab and Script
+- [td-5]: added #SceneManager (currently only for timeScale)
 
 ### Changed
 - [td-1]: renamed branch f-1 to td-1
 - [td-3]: revamped the WaveSpawner to spawn individual waves
 - [td-5]: AttackInterface returns true when enemy is ded
+
+### Removed
+- [td-5]: removed AttackBehavior due to MonoBehavior inheritance
 
 [td-1]: https://github.com/Gragog/Tower-Defense/tree/td-1
 [td-2]: https://github.com/Gragog/Tower-Defense/tree/td-2
