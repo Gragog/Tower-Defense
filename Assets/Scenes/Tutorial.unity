@@ -9418,8 +9418,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 35
   panAccelaration: 10
+  scrollSpeed: 30
   boostMultiplier: 3
   borderForMouse: 25
+  minY: 5
+  maxY: 50
+  minX: -60
+  maxX: 100
+  minZ: -35
+  maxZ: 50
 --- !u!1001 &1539289893
 Prefab:
   m_ObjectHideFlags: 0
