@@ -9365,7 +9365,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.05490196, g: 0.039215688, b: 0.09019608, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -9416,8 +9416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c323c945b7d9bd4cacfa2be53df5ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 50
+  panSpeed: 35
   panAccelaration: 10
+  boostMultiplier: 3
+  borderForMouse: 25
 --- !u!1001 &1539289893
 Prefab:
   m_ObjectHideFlags: 0

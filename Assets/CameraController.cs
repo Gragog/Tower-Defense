@@ -6,8 +6,13 @@ public class CameraController : MonoBehaviour {
 
     [Range(20, 100f)]
     public float panSpeed = 50f;
+    float targetPanSpeed;
     [Range(1f, 20f)]
     public float panAccelaration = 10f;
+    [Range(1, 10)]
+    public byte boostMultiplier = 2;
+    [Range(0, 100)]
+    public int borderForMouse = 25;
 
     float currentPanSpeed;
     Vector3 targetDirection;
@@ -16,19 +21,22 @@ public class CameraController : MonoBehaviour {
     void LateUpdate()
     {
         targetDirection = Vector3.zero;
+        targetPanSpeed = panSpeed;
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.mousePosition.y >= Screen.height - borderForMouse)
             targetDirection.z = 1;
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.mousePosition.y <= borderForMouse)
             targetDirection.z = -1;
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.mousePosition.x <= borderForMouse)
             targetDirection.x = -1;
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.mousePosition.x >= Screen.width - borderForMouse)
             targetDirection.x = 1;
+        if (Input.GetKey(KeyCode.RightShift))
+            targetPanSpeed = panSpeed * boostMultiplier;
 
         if (targetDirection.z != 0 || targetDirection.x != 0)
         {
-            currentPanSpeed = Mathf.Lerp(currentPanSpeed, panSpeed, Time.deltaTime * panAccelaration);
+            currentPanSpeed = Mathf.Lerp(currentPanSpeed, targetPanSpeed, Time.deltaTime * panAccelaration);
             lastMovement = targetDirection;
             transform.Translate(targetDirection.normalized * (currentPanSpeed * Time.deltaTime), Space.World);
 
