@@ -21,5 +21,6 @@
 - Turret looking at enemy
 - Simple damage dealing
 ---
-## [td-6](https://github.com/Gragog/Tower-Defense/tree/td-6): Building Turrets
+## [td-6](https://github.com/Gragog/Tower-Defense/tree/td-6): Simple turret building and camera movement
 - Building a turret when clicking on a node
+- Moving Camera with keys and mouse
