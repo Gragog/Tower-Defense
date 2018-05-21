@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour {
 
-    public GameObject bulletTurret;
-    GameObject turretToBuild;
 
     public static BuildManager Instance { get; private set; }
+    public static GameObject Shop { get; private set; }
 
     void Awake()
     {
@@ -18,15 +17,17 @@ public class BuildManager : MonoBehaviour {
         }
 
         Instance = this;
-    }
 
-    void Start()
-    {
-        turretToBuild = bulletTurret;
-    }
+        // ==============================
 
-    public GameObject GetTurretToBuild()
-    {
-        return turretToBuild;
+        if (Shop)
+        {
+            Debug.LogWarning("More than one Shop in scene!");
+            return;
+        }
+
+        Shop = GameObject.FindGameObjectWithTag("Shop");
+        if (!Shop.HasComponent<Shop>())
+            Debug.LogError("Shop is not a shop!");
     }
 }
