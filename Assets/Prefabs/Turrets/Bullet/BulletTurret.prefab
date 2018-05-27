@@ -278,10 +278,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 12
-  damagePerHit: 0.4
-  attackRate: 8
+  damagePerHit: 2
+  attackRate: 1
   rotationSpeed: 7
-  refreshTargetIntervall: 0.12
+  refreshTargetIntervall: 0.25
   target: {fileID: 0}
   bulletPrefab: {fileID: 1720626869272912, guid: b587179623b0e6e429dea530effb4275,
     type: 2}
